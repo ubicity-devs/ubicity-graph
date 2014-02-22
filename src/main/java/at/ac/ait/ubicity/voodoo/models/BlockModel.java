@@ -27,8 +27,8 @@ import java.util.Set;
  * @author jan van oort
  * @param <Graph> for which we want to compute a block model
  */
-public interface BlockModel<Graph> {
+public interface BlockModel<T extends PropertyGraph> {
 
     
-    public Set< Block > compute();
+    public Set< Block< T > > compute();
 }

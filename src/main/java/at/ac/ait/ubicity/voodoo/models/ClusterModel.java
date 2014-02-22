@@ -25,10 +25,10 @@ import java.util.Set;
  * @author jan van oort
  * @param <Graph> for which we want to compute a cluster model
  */
-public interface ClusterModel<Graph> {
+public interface ClusterModel< T extends PropertyGraph> {
 
     
-    public Set< Cluster > compute();
+    public Set< Cluster< T > > compute();
     
     
 }

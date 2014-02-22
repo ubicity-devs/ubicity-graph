@@ -22,6 +22,6 @@ package at.ac.ait.ubicity.voodoo.models;
  *
  * @author jan van oort
  */
-public interface Cluster {
+public interface Cluster< T extends PropertyGraph >  {
 
 }
