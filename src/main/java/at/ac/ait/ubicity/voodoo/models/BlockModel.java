@@ -27,5 +27,6 @@ package at.ac.ait.ubicity.voodoo.models;
  */
 public interface BlockModel<Graph> {
 
+    
     public Block[] compute();
 }
