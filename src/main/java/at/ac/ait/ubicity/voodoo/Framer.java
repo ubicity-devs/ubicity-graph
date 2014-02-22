@@ -22,7 +22,8 @@ package at.ac.ait.ubicity.voodoo;
 
 import at.ac.ait.ubicity.commons.exceptions.ExceptionHandler;
 import at.ac.ait.ubicity.commons.protocol.Medium;
-import org.codehaus.jettison.json.JSONObject;
+import org.json.JSONObject;
+
 
 
 /**
