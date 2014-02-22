@@ -29,21 +29,21 @@ import org.json.JSONObject;
 /**
  *
  * @author jan van oort
- * @param <T> this Framer's implementation target, e.g. Twitter
+ * @param <M> this Framer's implementation target, e.g. Twitter
  */
 
-public interface Framer< T extends Medium >{
+public interface Framer< M extends Medium >{
     
     
     
-    public MediumEdge<T> attemptEdge( JSONObject o );
+    public MediumEdge<M> attemptEdge( JSONObject o );
 
-    public MediumEdge<T> attemptEdge( JSONObject o, ExceptionHandler exceptionCallback );
+    public MediumEdge<M> attemptEdge( JSONObject o, ExceptionHandler exceptionCallback );
     
-    public MediumVertex<T> attemptVertex( JSONObject o );
+    public MediumVertex<M> attemptVertex( JSONObject o );
     
-    public MediumVertex<T> attemptVertex( JSONObject o, ExceptionHandler exceptionCallback );
+    public MediumVertex<M> attemptVertex( JSONObject o, ExceptionHandler exceptionCallback );
     
-    public Class<T> getMedium();
+    public Class<M> getMedium();
     
 }
