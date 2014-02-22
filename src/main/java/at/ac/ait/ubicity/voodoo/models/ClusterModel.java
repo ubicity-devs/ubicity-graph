@@ -18,6 +18,8 @@
 
 package at.ac.ait.ubicity.voodoo.models;
 
+import java.util.Set;
+
 /**
  *
  * @author jan van oort
@@ -26,7 +28,7 @@ package at.ac.ait.ubicity.voodoo.models;
 public interface ClusterModel<Graph> {
 
     
-    public Cluster[] compute();
+    public Set< Cluster > compute();
     
     
 }

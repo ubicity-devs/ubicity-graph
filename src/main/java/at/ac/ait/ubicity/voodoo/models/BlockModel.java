@@ -18,6 +18,8 @@
 
 package at.ac.ait.ubicity.voodoo.models;
 
+import java.util.Set;
+
 
 
 /**
@@ -28,5 +30,5 @@ package at.ac.ait.ubicity.voodoo.models;
 public interface BlockModel<Graph> {
 
     
-    public Block[] compute();
+    public Set< Block > compute();
 }

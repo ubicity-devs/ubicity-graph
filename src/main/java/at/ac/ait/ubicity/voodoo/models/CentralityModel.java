@@ -18,6 +18,8 @@
 
 package at.ac.ait.ubicity.voodoo.models;
 
+import java.util.Set;
+
 /**
  *
  * @author User
@@ -26,5 +28,5 @@ package at.ac.ait.ubicity.voodoo.models;
 public interface CentralityModel<Graph> {
     
     
-    public Centrality[] compute();
+    public Set< Centrality > compute();
 }
