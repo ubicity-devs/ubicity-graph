@@ -21,6 +21,7 @@ package at.ac.ait.ubicity.voodoo.models;
 /**
  *
  * @author jan van oort
+ * @param <T> a PropertyGraph for which we wish to compute Blocks
  */
 public interface Block<T extends PropertyGraph > {
 
