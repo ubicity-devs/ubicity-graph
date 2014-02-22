@@ -25,10 +25,11 @@ import java.util.Set;
 /**
  *
  * @author jan van oort
- * @param <Graph> for which we want to compute a block model
+ * @param <G> A ( subclass of ) PropertyGraph for which we want to compute a block model
  */
-public interface BlockModel<T extends PropertyGraph> {
+@FunctionalInterface
+public interface BlockModel< G extends PropertyGraph > {
 
     
-    public Set< Block< T > > compute();
+    public Set< Block< G > > compute( G g );
 }

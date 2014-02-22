@@ -23,12 +23,14 @@ import java.util.Set;
 /**
  *
  * @author jan van oort
- * @param <Graph> for which we want to compute a cluster model
+ * @param <G> A ( subclass of ) PropertyGraph for which we want to compute clusters
+ * 
  */
-public interface ClusterModel< T extends PropertyGraph> {
+@FunctionalInterface
+public interface ClusterModel< G extends PropertyGraph> {
 
     
-    public Set< Cluster< T > > compute();
+    public Set< Cluster< G > > compute( G g );
     
     
 }

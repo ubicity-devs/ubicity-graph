@@ -23,10 +23,11 @@ import java.util.Set;
 /**
  *
  * @author User
- * @param <Graph> for which we want to compute a centrality model
+ * @param <G> A ( subclass of ) PropertyGraph for which we want to compute a centrality model
  */
-public interface CentralityModel< T extends PropertyGraph> {
+@FunctionalInterface
+public interface CentralityModel< G extends PropertyGraph> {
     
     
-    public Set< Centrality< T > > compute();
+    public Set< Centrality< G > > compute( G g );
 }
