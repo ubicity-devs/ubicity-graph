@@ -22,6 +22,7 @@ import at.ac.ait.ubicity.commons.protocol.Medium;
 import com.tinkerpop.blueprints.Direction;
 import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.Vertex;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -31,7 +32,7 @@ import java.util.Set;
  * in that Medium's social graph
  * 
  */
-public abstract class MediumEdge<T extends Medium > implements Edge {
+public abstract class MediumEdge<T extends Medium > implements Edge, Serializable {
 
     
     public abstract  Vertex getVertex(Direction direction) throws IllegalArgumentException;

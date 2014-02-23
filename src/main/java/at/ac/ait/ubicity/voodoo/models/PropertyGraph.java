@@ -5,6 +5,7 @@ import com.tinkerpop.blueprints.Features;
 import com.tinkerpop.blueprints.Graph;
 import com.tinkerpop.blueprints.GraphQuery;
 import com.tinkerpop.blueprints.Vertex;
+import java.io.Serializable;
 
 /**
  * A bridge between the <Tinkerpop> Graph and ubicity's MediumGraph. 
@@ -17,7 +18,7 @@ import com.tinkerpop.blueprints.Vertex;
  * 
  * @author jan van oort
  */
-public abstract class PropertyGraph implements Graph {
+public abstract class PropertyGraph implements Graph, Serializable {
 
     @Override
     public abstract Features getFeatures();

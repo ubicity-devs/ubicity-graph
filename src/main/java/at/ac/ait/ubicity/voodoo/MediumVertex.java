@@ -23,6 +23,7 @@ import com.tinkerpop.blueprints.Direction;
 import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.Vertex;
 import com.tinkerpop.blueprints.VertexQuery;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -31,7 +32,7 @@ import java.util.Set;
  * @param <T> The medium ( Twitter, Flickr ) for which this class depicts an edge, 
  * in that Medium's social graph
  */
-public abstract class MediumVertex<T extends Medium > implements Vertex {
+public abstract class MediumVertex<T extends Medium > implements Vertex, Serializable {
 
     public abstract Iterable<Edge> getEdges(Direction direction, String... labels);
 
