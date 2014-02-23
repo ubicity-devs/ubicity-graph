@@ -44,6 +44,6 @@ public interface Framer< M extends Medium >{
     
     public MediumVertex<M> attemptVertex( JSONObject o, ExceptionHandler exceptionCallback );
     
-    public Class<M> getMedium();
+    public M getMedium();
     
 }
