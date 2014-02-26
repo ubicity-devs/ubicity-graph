@@ -11,3 +11,7 @@ With Voodoo we explain things. Voodoo aims at putting the <a href="https://githu
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ubicity-principal/voodoo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
