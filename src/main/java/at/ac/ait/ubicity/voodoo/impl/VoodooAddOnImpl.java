@@ -17,12 +17,12 @@
  */
 package at.ac.ait.ubicity.voodoo.impl;
 
-import at.ac.ait.ubicity.commons.JSONObjectHandler;
-import at.ac.ait.ubicity.voodoo.VoodooAddOn;
-import com.lmax.disruptor.EventHandler;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 import net.xeoh.plugins.base.annotations.PluginImplementation;
+import at.ac.ait.ubicity.commons.JSONObjectHandler;
+import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
 /**
  *
@@ -31,25 +31,18 @@ import net.xeoh.plugins.base.annotations.PluginImplementation;
 @PluginImplementation
 public class VoodooAddOnImpl implements VoodooAddOn {
 
-    
-    private final SortedSet< Class< ? extends JSONObjectHandler > > eventHandlers = new TreeSet();
-    
-    
-    public VoodooAddOnImpl()    {
-        eventHandlers.add( VoodooEventHandler.class );
-    }
-    
-    @Override
-    public SortedSet<Class<? extends JSONObjectHandler>> getDeclaredEventHandlers() {
-        return eventHandlers;
-    }
+	private final SortedSet<Class<? extends JSONObjectHandler>> eventHandlers = new TreeSet();
 
-    @Override
-    public boolean shutDown() {
-        throw new UnsupportedOperationException( "Not supported yet." );
-    }
-    
-    
-    
-    
+	public VoodooAddOnImpl() {
+		eventHandlers.add(VoodooEventHandler.class);
+	}
+
+	public SortedSet<Class<? extends JSONObjectHandler>> getDeclaredEventHandlers() {
+		return eventHandlers;
+	}
+
+	public boolean shutDown() {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
 }
