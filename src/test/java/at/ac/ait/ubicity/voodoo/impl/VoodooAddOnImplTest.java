@@ -14,7 +14,7 @@ import java.util.SortedSet;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import at.ac.ait.ubicity.commons.JSONObjectHandler;
+import at.ac.ait.ubicity.commons.addon.JSONObjectHandler;
 
 /**
  *

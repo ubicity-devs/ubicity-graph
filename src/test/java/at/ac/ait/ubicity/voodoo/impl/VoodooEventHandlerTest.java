@@ -11,7 +11,7 @@ import static org.junit.Assert.fail;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import at.ac.ait.ubicity.commons.JSONObjectWrapper;
+import at.ac.ait.ubicity.commons.addon.JSONObjectWrapper;
 
 /**
  *

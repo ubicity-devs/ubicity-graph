@@ -24,5 +24,5 @@ import at.ac.ait.ubicity.commons.interfaces.UbicityAddOn;
  * @author jan
  */
 public interface VoodooAddOn extends UbicityAddOn {
-    
+
 }

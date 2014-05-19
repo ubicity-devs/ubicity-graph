@@ -13,21 +13,21 @@
 	<packaging>jar</packaging>
 
 	<name>ubicity-voodoo</name>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
 		<dependency>
+			<groupId>at.ac.ait.ubicity</groupId>
+			<artifactId>ubicity-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.tinkerpop</groupId>
 			<artifactId>frames</artifactId>
 			<version>2.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>at.ac.ait.ubicity</groupId>
-			<artifactId>commons</artifactId>
-			<version>0.2.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

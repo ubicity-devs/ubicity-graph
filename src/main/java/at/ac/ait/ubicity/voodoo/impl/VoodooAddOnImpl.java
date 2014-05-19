@@ -21,7 +21,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import net.xeoh.plugins.base.annotations.PluginImplementation;
-import at.ac.ait.ubicity.commons.JSONObjectHandler;
+import at.ac.ait.ubicity.commons.addon.JSONObjectHandler;
 import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
 /**

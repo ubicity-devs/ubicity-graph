@@ -1,49 +1,48 @@
-
 /**
-    Copyright (C) 2014  AIT / Austrian Institute of Technology
-    http://www.ait.ac.at
+ Copyright (C) 2014  AIT / Austrian Institute of Technology
+ http://www.ait.ac.at
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as
+ published by the Free Software Foundation, either version 3 of the
+ License, or (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
 
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see http://www.gnu.org/licenses/agpl-3.0.html
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see http://www.gnu.org/licenses/agpl-3.0.html
  */
-
 
 package at.ac.ait.ubicity.voodoo;
 
-import at.ac.ait.ubicity.commons.exceptions.ExceptionHandler;
-import at.ac.ait.ubicity.commons.protocol.Medium;
 import org.json.JSONObject;
 
+import at.ac.ait.ubicity.commons.protocol.Medium;
 
+import com.lmax.disruptor.ExceptionHandler;
 
 /**
  *
  * @author jan van oort
- * @param <M> this Framer's implementation target, e.g. Twitter
+ * @param <M>
+ *            this Framer's implementation target, e.g. Twitter
  */
 
-public interface Framer< M extends Medium >{
-    
-    
-    
-    public MediumEdge<M> attemptEdge( JSONObject o );
+public interface Framer<M extends Medium> {
 
-    public MediumEdge<M> attemptEdge( JSONObject o, ExceptionHandler exceptionCallback );
-    
-    public MediumVertex<M> attemptVertex( JSONObject o );
-    
-    public MediumVertex<M> attemptVertex( JSONObject o, ExceptionHandler exceptionCallback );
-    
-    public M getMedium();
-    
+	public MediumEdge<M> attemptEdge(JSONObject o);
+
+	public MediumEdge<M> attemptEdge(JSONObject o,
+			ExceptionHandler exceptionCallback);
+
+	public MediumVertex<M> attemptVertex(JSONObject o);
+
+	public MediumVertex<M> attemptVertex(JSONObject o,
+			ExceptionHandler exceptionCallback);
+
+	public M getMedium();
+
 }
