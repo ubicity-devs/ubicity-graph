@@ -17,32 +17,76 @@
  */
 package at.ac.ait.ubicity.voodoo.impl;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.Random;
 
 import net.xeoh.plugins.base.annotations.PluginImplementation;
-import at.ac.ait.ubicity.commons.addon.JSONObjectHandler;
+
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.log4j.Logger;
+
+import at.ac.ait.ubicity.commons.broker.events.EventEntry;
+import at.ac.ait.ubicity.core.Core;
 import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
-/**
- *
- * @author jan
- */
 @PluginImplementation
 public class VoodooAddOnImpl implements VoodooAddOn {
 
-	private final SortedSet<Class<? extends JSONObjectHandler>> eventHandlers = new TreeSet();
+	private final String name;
+
+	private final Core core;
+
+	private final int uniqueId;
+
+	protected static Logger logger = Logger.getLogger(VoodooAddOnImpl.class);
 
 	public VoodooAddOnImpl() {
-		eventHandlers.add(VoodooEventHandler.class);
+		uniqueId = new Random().nextInt();
+		try {
+			// set necessary stuff for us to ueberhaupt be able to work
+			Configuration config = new PropertiesConfiguration(
+					VoodooAddOnImpl.class.getResource("/voodoo.cfg"));
+
+			this.name = config.getString("addon.voodoo.name");
+
+		} catch (ConfigurationException noConfig) {
+			logger.fatal("Configuration not found! " + noConfig.toString());
+			throw new RuntimeException();
+		}
+
+		core = Core.getInstance();
+		core.register(this);
 	}
 
-	public SortedSet<Class<? extends JSONObjectHandler>> getDeclaredEventHandlers() {
-		return eventHandlers;
+	@Override
+	public final int hashCode() {
+		return uniqueId;
 	}
 
-	public boolean shutDown() {
+	@Override
+	public final boolean equals(Object o) {
+
+		if (VoodooAddOnImpl.class.isInstance(o)) {
+			VoodooAddOnImpl other = (VoodooAddOnImpl) o;
+			return other.uniqueId == this.uniqueId;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean shutdown() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void onEvent(EventEntry event, long sequence, boolean endOfBatch)
+			throws Exception {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 }
