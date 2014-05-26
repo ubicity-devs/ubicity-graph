@@ -21,12 +21,10 @@ import java.util.Random;
 
 import net.xeoh.plugins.base.annotations.PluginImplementation;
 
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
 import at.ac.ait.ubicity.commons.broker.events.EventEntry;
+import at.ac.ait.ubicity.commons.util.PropertyLoader;
 import at.ac.ait.ubicity.core.Core;
 import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
@@ -43,17 +41,10 @@ public class VoodooAddOnImpl implements VoodooAddOn {
 
 	public VoodooAddOnImpl() {
 		uniqueId = new Random().nextInt();
-		try {
-			// set necessary stuff for us to ueberhaupt be able to work
-			Configuration config = new PropertiesConfiguration(
-					VoodooAddOnImpl.class.getResource("/voodoo.cfg"));
 
-			this.name = config.getString("addon.voodoo.name");
-
-		} catch (ConfigurationException noConfig) {
-			logger.fatal("Configuration not found! " + noConfig.toString());
-			throw new RuntimeException();
-		}
+		PropertyLoader config = new PropertyLoader(
+				VoodooAddOnImpl.class.getResource("/voodoo.cfg"));
+		this.name = config.getString("addon.voodoo.name");
 
 		core = Core.getInstance();
 		core.register(this);
