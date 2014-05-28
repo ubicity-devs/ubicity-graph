@@ -20,6 +20,8 @@ package at.ac.ait.ubicity.voodoo.impl;
 import java.util.Random;
 
 import net.xeoh.plugins.base.annotations.PluginImplementation;
+import net.xeoh.plugins.base.annotations.events.Init;
+import net.xeoh.plugins.base.annotations.events.Shutdown;
 
 import org.apache.log4j.Logger;
 
@@ -31,15 +33,17 @@ import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 @PluginImplementation
 public class VoodooAddOnImpl implements VoodooAddOn {
 
-	private final String name;
+	private String name;
 
-	private final Core core;
+	private Core core;
 
-	private final int uniqueId;
+	private int uniqueId;
 
 	protected static Logger logger = Logger.getLogger(VoodooAddOnImpl.class);
 
-	public VoodooAddOnImpl() {
+	@Override
+	@Init
+	public void init() {
 		uniqueId = new Random().nextInt();
 
 		PropertyLoader config = new PropertyLoader(
@@ -66,7 +70,8 @@ public class VoodooAddOnImpl implements VoodooAddOn {
 	}
 
 	@Override
-	public boolean shutdown() {
+	@Shutdown
+	public void shutdown() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
