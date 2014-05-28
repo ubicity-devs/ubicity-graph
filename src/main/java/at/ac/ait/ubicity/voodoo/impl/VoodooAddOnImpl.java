@@ -41,7 +41,6 @@ public class VoodooAddOnImpl implements VoodooAddOn {
 
 	protected static Logger logger = Logger.getLogger(VoodooAddOnImpl.class);
 
-	@Override
 	@Init
 	public void init() {
 		uniqueId = new Random().nextInt();
@@ -69,18 +68,15 @@ public class VoodooAddOnImpl implements VoodooAddOn {
 		return false;
 	}
 
-	@Override
 	@Shutdown
 	public void shutdown() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
-	@Override
 	public String getName() {
 		return this.name;
 	}
 
-	@Override
 	public void onEvent(EventEntry event, long sequence, boolean endOfBatch)
 			throws Exception {
 		throw new UnsupportedOperationException("Not supported yet.");
