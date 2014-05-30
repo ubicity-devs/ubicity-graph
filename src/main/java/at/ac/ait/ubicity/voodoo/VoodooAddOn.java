@@ -17,13 +17,12 @@
  */
 package at.ac.ait.ubicity.voodoo;
 
-import at.ac.ait.ubicity.commons.broker.BrokerConsumer;
 import at.ac.ait.ubicity.commons.interfaces.UbicityAddOn;
 
 /**
  *
  * @author jan
  */
-public interface VoodooAddOn extends UbicityAddOn, BrokerConsumer {
+public interface VoodooAddOn extends UbicityAddOn {
 
 }

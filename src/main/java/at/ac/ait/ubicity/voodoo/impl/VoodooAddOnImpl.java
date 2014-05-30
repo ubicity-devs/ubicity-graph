@@ -25,13 +25,14 @@ import net.xeoh.plugins.base.annotations.events.Shutdown;
 
 import org.apache.log4j.Logger;
 
+import at.ac.ait.ubicity.commons.broker.BrokerConsumer;
 import at.ac.ait.ubicity.commons.broker.events.EventEntry;
 import at.ac.ait.ubicity.commons.util.PropertyLoader;
 import at.ac.ait.ubicity.core.Core;
 import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
 @PluginImplementation
-public class VoodooAddOnImpl implements VoodooAddOn {
+public class VoodooAddOnImpl extends BrokerConsumer implements VoodooAddOn {
 
 	private String name;
 
@@ -73,12 +74,13 @@ public class VoodooAddOnImpl implements VoodooAddOn {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	@Override
 	public String getName() {
 		return this.name;
 	}
 
-	public void onEvent(EventEntry event, long sequence, boolean endOfBatch)
-			throws Exception {
+	@Override
+	public void onReceived(EventEntry event) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }
