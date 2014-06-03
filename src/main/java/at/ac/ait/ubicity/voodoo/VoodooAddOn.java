@@ -17,12 +17,12 @@
  */
 package at.ac.ait.ubicity.voodoo;
 
-import at.ac.ait.ubicity.commons.interfaces.UbicityAddOn;
+import at.ac.ait.ubicity.commons.interfaces.UbicityPlugin;
 
 /**
  *
  * @author jan
  */
-public interface VoodooAddOn extends UbicityAddOn {
+public interface VoodooAddOn extends UbicityPlugin {
 
 }
