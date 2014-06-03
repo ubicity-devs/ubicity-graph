@@ -21,7 +21,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>at.ac.ait.ubicity</groupId>
-			<artifactId>ubicity-core</artifactId>
+			<artifactId>ubicity-commons</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>

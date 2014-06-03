@@ -28,7 +28,6 @@ import org.apache.log4j.Logger;
 import at.ac.ait.ubicity.commons.broker.BrokerConsumer;
 import at.ac.ait.ubicity.commons.broker.events.EventEntry;
 import at.ac.ait.ubicity.commons.util.PropertyLoader;
-import at.ac.ait.ubicity.core.Core;
 import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 
 @PluginImplementation
@@ -36,10 +35,7 @@ public class VoodooAddOnImpl extends BrokerConsumer implements VoodooAddOn {
 
 	private String name;
 
-	private Core core;
-
 	private int uniqueId;
-
 	protected static Logger logger = Logger.getLogger(VoodooAddOnImpl.class);
 
 	@Init
@@ -49,9 +45,6 @@ public class VoodooAddOnImpl extends BrokerConsumer implements VoodooAddOn {
 		PropertyLoader config = new PropertyLoader(
 				VoodooAddOnImpl.class.getResource("/voodoo.cfg"));
 		this.name = config.getString("addon.voodoo.name");
-
-		core = Core.getInstance();
-		core.register(this);
 	}
 
 	@Override
