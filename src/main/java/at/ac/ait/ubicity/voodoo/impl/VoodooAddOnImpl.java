@@ -17,8 +17,6 @@
  */
 package at.ac.ait.ubicity.voodoo.impl;
 
-import java.util.Random;
-
 import net.xeoh.plugins.base.annotations.PluginImplementation;
 import net.xeoh.plugins.base.annotations.events.Init;
 import net.xeoh.plugins.base.annotations.events.Shutdown;
@@ -34,37 +32,20 @@ import at.ac.ait.ubicity.voodoo.VoodooAddOn;
 public class VoodooAddOnImpl extends BrokerConsumer implements VoodooAddOn {
 
 	private String name;
-
-	private int uniqueId;
 	protected static Logger logger = Logger.getLogger(VoodooAddOnImpl.class);
 
 	@Init
 	public void init() {
-		uniqueId = new Random().nextInt();
-
 		PropertyLoader config = new PropertyLoader(
 				VoodooAddOnImpl.class.getResource("/voodoo.cfg"));
 		this.name = config.getString("addon.voodoo.name");
-	}
 
-	@Override
-	public final int hashCode() {
-		return uniqueId;
-	}
-
-	@Override
-	public final boolean equals(Object o) {
-
-		if (VoodooAddOnImpl.class.isInstance(o)) {
-			VoodooAddOnImpl other = (VoodooAddOnImpl) o;
-			return other.uniqueId == this.uniqueId;
-		}
-		return false;
+		logger.info(name + " loaded");
 	}
 
 	@Shutdown
 	public void shutdown() {
-		throw new UnsupportedOperationException("Not supported yet.");
+
 	}
 
 	@Override
