@@ -43,12 +43,12 @@ public class VoodooAddOnImpl extends BrokerConsumer implements VoodooAddOn {
 		logger.info(name + " loaded");
 	}
 
+	@Override
 	@Shutdown
 	public void shutdown() {
-
+		super.shutdown();
 	}
 
-	@Override
 	public String getName() {
 		return this.name;
 	}
