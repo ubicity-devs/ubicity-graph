@@ -34,6 +34,7 @@ public class VoodooPluginImpl extends BrokerConsumer implements VoodooPlugin {
 	private String name;
 	protected static Logger logger = Logger.getLogger(VoodooPluginImpl.class);
 
+	@Override
 	@Init
 	public void init() {
 		PropertyLoader config = new PropertyLoader(
@@ -49,12 +50,13 @@ public class VoodooPluginImpl extends BrokerConsumer implements VoodooPlugin {
 		super.shutdown();
 	}
 
+	@Override
 	public String getName() {
 		return this.name;
 	}
 
 	@Override
-	public void onReceived(EventEntry event) {
+	public void onReceived(String destination, EventEntry event) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }
