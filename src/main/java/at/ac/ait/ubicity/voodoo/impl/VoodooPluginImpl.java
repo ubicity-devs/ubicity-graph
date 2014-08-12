@@ -59,4 +59,9 @@ public class VoodooPluginImpl extends BrokerConsumer implements VoodooPlugin {
 	public void onReceived(String destination, EventEntry event) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
+
+	@Override
+	protected void onReceivedRaw(String destination, String tmsg) {
+		// Not used here
+	}
 }
