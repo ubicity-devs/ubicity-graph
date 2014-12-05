@@ -15,14 +15,14 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see http://www.gnu.org/licenses/agpl-3.0.html
  */
+package at.ac.ait.ubicity.tinkerpop;
 
-package at.ac.ait.ubicity.voodoo.models;
+import at.ac.ait.ubicity.commons.interfaces.UbicityPlugin;
 
 /**
  *
- * @author jan van oort
- * @param <T> a PropertyGraph for which we wish to compute Clusters
+ * @author jan
  */
-public interface Cluster< T extends PropertyGraph >  {
+public interface TinkerpopPlugin extends UbicityPlugin {
 
 }

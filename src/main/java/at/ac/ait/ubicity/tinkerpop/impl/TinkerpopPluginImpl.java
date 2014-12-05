@@ -15,7 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see http://www.gnu.org/licenses/agpl-3.0.html
  */
-package at.ac.ait.ubicity.voodoo.impl;
+package at.ac.ait.ubicity.tinkerpop.impl;
 
 import net.xeoh.plugins.base.annotations.PluginImplementation;
 import net.xeoh.plugins.base.annotations.events.Init;
@@ -26,20 +26,20 @@ import org.apache.log4j.Logger;
 import at.ac.ait.ubicity.commons.broker.BrokerConsumer;
 import at.ac.ait.ubicity.commons.broker.events.EventEntry;
 import at.ac.ait.ubicity.commons.util.PropertyLoader;
-import at.ac.ait.ubicity.voodoo.VoodooPlugin;
+import at.ac.ait.ubicity.tinkerpop.TinkerpopPlugin;
 
 @PluginImplementation
-public class VoodooPluginImpl extends BrokerConsumer implements VoodooPlugin {
+public class TinkerpopPluginImpl extends BrokerConsumer implements TinkerpopPlugin {
 
 	private String name;
-	protected static Logger logger = Logger.getLogger(VoodooPluginImpl.class);
+	protected static Logger logger = Logger.getLogger(TinkerpopPluginImpl.class);
 
 	@Override
 	@Init
 	public void init() {
 		PropertyLoader config = new PropertyLoader(
-				VoodooPluginImpl.class.getResource("/voodoo.cfg"));
-		this.name = config.getString("plugin.voodoo.name");
+				TinkerpopPluginImpl.class.getResource("/tinkerpop.cfg"));
+		this.name = config.getString("plugin.tinkerpop.name");
 
 		logger.info(name + " loaded");
 	}

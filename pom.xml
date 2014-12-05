@@ -27,8 +27,18 @@
 		</dependency>
 		<dependency>
 			<groupId>com.tinkerpop</groupId>
-			<artifactId>frames</artifactId>
-			<version>2.4.0</version>
+			<artifactId>gremlin-core</artifactId>
+			<version>3.0.0.M5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tinkerpop</groupId>
+			<artifactId>tinkergraph-gremlin</artifactId>
+			<version>3.0.0.M5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tinkerpop</groupId>
+			<artifactId>neo4j-gremlin</artifactId>
+			<version>3.0.0.M5</version>
 		</dependency>
 	</dependencies>
 
