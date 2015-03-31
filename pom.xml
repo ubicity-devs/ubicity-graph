@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>at.ac.ait.ubicity</groupId>
 		<artifactId>ubicity-root</artifactId>
-		<version>0.4.0-SNAPSHOT</version>
+		<version>1.1.0-SNAPSHOT</version>
 		<relativePath>../ubicity-root/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>ubicity-voodoo</artifactId>
+	<artifactId>ubicity-graph</artifactId>
 	<packaging>jar</packaging>
 
-	<name>ubicity-voodoo</name>
+	<name>ubicity-graph</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
