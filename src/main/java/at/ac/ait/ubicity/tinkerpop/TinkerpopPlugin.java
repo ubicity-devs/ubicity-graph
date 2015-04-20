@@ -19,10 +19,6 @@ package at.ac.ait.ubicity.tinkerpop;
 
 import at.ac.ait.ubicity.commons.interfaces.UbicityPlugin;
 
-/**
- *
- * @author jan
- */
 public interface TinkerpopPlugin extends UbicityPlugin {
 
 }
